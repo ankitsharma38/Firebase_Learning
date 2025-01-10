@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { app } from "../firebase";
 
 const auth = getAuth(app);
-export const SignupPage = () => {
+export const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,6 +14,7 @@ export const SignupPage = () => {
   };
   return (
     <div className="signup-page">
+      <h1>Signup Page</h1>
       <label>Email</label>
       <input
         onChange={(e) => setEmail(e.target.value)}
@@ -30,9 +31,9 @@ export const SignupPage = () => {
         required
         placeholder="Enter your Password here"
       />
-      <button onClick={createUser}>Signup</button>
+      <button onClick={createUser}>SignUp</button>
     </div>
   );
 };
 
-export default SignupPage;
+export default Signup;
