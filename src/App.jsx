@@ -1,15 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { app } from './firebase';
+import SignupPage from "./pages/SignUp";
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const auth = getAuth(app);
 
+function App() {
+  const signupUser=()=>{
+    createUserWithEmailAndPassword(
+      auth,
+      'ankitsharma123@gmail.com',
+    "ankit@123"
+  ).then((value)=>console.log(value));
+  }
   return (
     <>
-      <div>
-        This is FireBase APP
+      <div className="App">
+        <SignupPage/>
       </div>
     </>
   )
